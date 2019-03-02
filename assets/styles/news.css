@@ -1,0 +1,340 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body {
+    padding-top: 100px;
+    background: #F9F9F9;
+}
+
+.news {
+    max-width: 1420px;
+    width: 90%;
+    min-height: 550px;
+    height: 550px;
+    margin: auto;
+}
+
+.news__articles {
+    width: 65%;
+    height: 100%;
+    box-shadow: 0px 0px 30px 5px #00000042;
+    grid-area: articles;
+    float: left;
+    max-width: 1000px;
+    display: grid;
+    grid-template-areas:
+    "main main main secondary-first"
+    "main main main secondary-second"
+    "main main main secondary-third";
+    z-index: 1;
+}
+
+.articles__main, .articles__secondary {
+    background: #000;
+    background-size: contain;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.articles__overlay:hover {
+    background: #33333370;
+}
+
+.articles__anchor {
+    grid-area: main;
+}
+
+.articles__anchor--secondary-first {
+    grid-area: secondary-first;
+}
+
+.articles__anchor--secondary-second {
+    grid-area: secondary-second;
+}
+
+.articles__anchor--secondary-third {
+    grid-area: secondary-third;
+}
+
+.articles__main {
+    background: url("../images/main.jpg");
+    background-size: cover;
+    z-index: 2;
+    height: 100%;
+}
+
+.articles__secondary {
+    box-sizing: border-box;
+    height: 100%;
+}
+
+.articles__secondary--first {
+    background: url("../images/secondary_first.jpg");
+}
+
+.articles__secondary--second {
+    background: url("../images/secondary_second.jpg");
+}
+
+.articles__secondary--third {
+    background: url("../images/secondary_third.jpg");
+}
+
+.articles__secondary {
+    padding-top: 60px;
+    background-size: cover;
+    z-index: 2;
+}
+
+.articles__overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #1b1b1b73;
+    z-index: -1;
+    transition: background-color 200ms;
+}
+
+.articles__ministry {
+    padding: 7px;
+    border-radius: 4px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 12px;
+    background: #033E7C;
+    position: absolute;
+    top: 25px;
+    left: 25px;
+}
+
+.articles__img {
+    width: 130px;
+    height: auto;
+    margin: 15px 5px;
+    display: none;
+}
+
+.text-container__date {
+    font-size: 14px;
+    margin-bottom: 10px;
+    font-style: italic;
+    color: #CECFCF;
+}
+
+.articles__ministry--secondary {
+    top: 10px;
+    left: 10px;
+}
+
+.articles__text-container {
+    padding: 30px;
+}
+
+.articles__text-container--secondary {
+    padding: 10px;
+}
+
+.text-container__title {
+    font-size: 22px;
+    margin-bottom: 10px; 
+    color: #fff;
+}
+
+.text-container__paragraph {
+    line-height: 1.4;
+    color: #fff;
+}
+
+.text-container__title--secondary{
+    font-size: 15px;
+}
+
+.news__press-releases-wrapper {
+    height: 100%;
+    width: 35%;
+    max-width: 1000px;
+    grid-area: press-releases;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 0;
+}
+
+.news__press-releases {
+    overflow-x: hidden;
+    overflow-y: auto;
+    width: 85%;
+    display: block;
+    margin-bottom: 30px;
+}
+
+.news__press-releases {
+    border-collapse: collapse;
+    display: flex;
+    justify-content: center;
+}
+
+.row__anchor {
+    display: block;
+    padding: 20px;
+    transition: background-color 200ms;
+}
+
+.row__anchor:hover {
+    background: #f8f9fa;
+}
+
+.row__anchor:hover .row__paragraph {
+    color: #0a6c9f;
+}
+
+.press-releases__row {
+    border-top: 1px solid #E5E5E5;
+    border-bottom: 1px solid #E5E5E5;
+}
+
+.press-releases__row:first-of-type, .press-releases__row:last-of-type {
+    border: none;
+}
+
+.press-releases__title {
+    text-align: center;
+    font-size: 18px;
+    margin: 20px;
+    margin-top: 30px;
+}
+
+.row__paragraph {
+    color: #414142;
+    transition: color 200ms;
+}
+
+.row__date {
+    font-size: 14px;
+    font-style: italic;
+    color: #777;
+    margin-bottom: 5px;
+}
+
+.press-releases__all-releases {
+    padding: 15px 25%;
+    background: #F2F2F2;
+    font-size: 15px;
+    color: #414142;
+    border-radius: 4px;
+    font-weight: bold;
+    border: 1px solid #F2F2F2;
+    transition: background-color 200ms, border-color 200ms;
+    margin-bottom: 30px;
+}
+
+.press-releases__all-releases:hover {
+    background: #fff;
+    border-color: #000;
+}
+
+/* Media query */
+
+@media screen and (max-width: 1200px) {
+    .news {
+        min-height: 560px;
+    }
+
+    .news__articles {
+        height: initial;
+        width: 100%;
+        float: none;
+    }
+
+    .news__press-releases-wrapper {
+        width: 100%;
+        height: initial;
+    }
+
+    .articles__text-container {
+        padding-top: 200px;
+    }
+
+    .articles__text-container--secondary {
+        padding-top: 50px;
+    }
+}
+
+@media screen and (max-width: 990px) {
+    .news__articles {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas:
+        "main main main"
+        "main main main"
+        "main main main"
+        "secondary-first secondary-second secondary-third"
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .news__articles {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "main"
+        "main"
+        "main"
+        "secondary-first"
+        "secondary-second"
+        "secondary-third";
+    }
+
+    .articles__secondary {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding: 0;
+        background: #fff;
+        border-bottom: 1px solid #E5E5E5; 
+    }
+
+    .articles__text-container--secondary {
+        margin-top: 50px;
+        margin-left: 5px;
+        padding: 0;
+    }
+
+    .articles__ministry--secondary {
+        top: 15px;
+        left: 145px;
+    }
+
+    .text-container__date--secondary {
+        margin: 0;
+    }
+
+    .articles__overlay--secondary {
+        display: none;
+    }
+
+    .text-container__date--secondary, .text-container__title--secondary {
+        color: #414142;
+    }
+
+    .articles__img {
+        display: inline-block;
+    }
+
+    .text-container__paragraph {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .news {
+        width: 100%;
+    }
+}
